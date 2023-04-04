@@ -7,5 +7,6 @@ chat_id = 263008738 # Ваш chat ID, не меняйте название пе�
 def log_likelihood(a, x):
     return -np.sum(lognorm.logpdf(x, s=a))
 def solution(x: np.array) -> float:
+    x -= 331
     result = minimize(log_likelihood, 1, args=(x,))
     return result.x[0] # Ваш ответ
